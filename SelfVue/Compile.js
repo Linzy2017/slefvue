@@ -52,6 +52,8 @@ Compile.prototype = {
                } else { // v-model
                     this.compileModelEvent(node, this.vm, value, dir);
                }
+
+               node.removeAttribute(name)
            }
         });
     },
