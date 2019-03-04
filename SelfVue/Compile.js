@@ -66,6 +66,7 @@ Compile.prototype = {
         node.addEventListener('input', (e) => {
             const newData = e.target.value;
             if (data !== newData) {
+                // 以下两行上下位置调换会导致数据在watcher的之后新数据没有及时更新
                 data = newData;
                 vm[exp] = newData;
             }
