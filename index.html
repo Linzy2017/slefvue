@@ -5,6 +5,14 @@
   <title>slefvue</title>
 </head>
 <body>
+<div id="app">
+  <div a="ssss" b="cssss" c="ass">{{name}}</div>
+  <input type="text" v-model="name"/>
+</div>
+<script src="./SelfVue/Dep.js"></script>
+<script src="./SelfVue/Watcher.js"></script>
+<script src="./SelfVue/Observer.js"></script>
+<script src="./SelfVue/Compile.js"></script>
 <script src="./SelfVue/index.js"></script>
 <script>
   let vue = new SelfVue({
@@ -13,7 +21,6 @@
           name: 'lqz',
       },
   });
-  console.log(vue)
 </script>
 </body>
 </html>

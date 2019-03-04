@@ -4,6 +4,9 @@ function SelfVue(options) {
     Object.keys(this.data).forEach((key) => {
         this.proxyKeys(key);
     });
+
+    observe(this.data);
+    new Compile(this.el, this);
 }
 
 SelfVue.prototype = {
@@ -19,8 +22,16 @@ SelfVue.prototype = {
               console.log('SelfVue data set')
               if (this.data[key] !== newData) {
                 this.data[key] = newData;
+                console.log(this.data[key])
               }
           },
       })
   },
+};
+
+function observe(value, vm) {
+    if (!value || typeof value !== 'object') {
+        return;
+    }
+    return new Observer(value);
 };
